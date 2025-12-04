@@ -1,5 +1,5 @@
 import { useGSAP } from "@gsap/react";
-import { title } from "process";
+import gsap from "gsap";
 import React from "react";
 import { useRef } from "react";
 
@@ -10,8 +10,7 @@ const FONT_WEIGHTS = {
 
 const renderText = (text, className, baseWeight = 400) => {
   return [
-    ...text,
-    map((char, i) => (
+    ...text.split("").map((char, i) => (
       <span
         key={i}
         className={className}
@@ -42,9 +41,10 @@ const setupTextHover = (container, type) => {
     const mouseX = e.clientX - left;
 
     letters.forEach((letter) => {
-      const { left: l, width: w } = letters.getBoundingClientRect();
-      const distance = Math.abs(mouseX - (l - left + w / 2));
-      const intensity = Math.exp(-(distance ** 2) / 20000);
+      const { left: l, width: w } = letter.getBoundingClientRect();
+      const letterCenter = l - left + w / 2;
+      const distance = Math.abs(mouseX - letterCenter);
+      const intensity = Math.max(0, 1 - distance / 100);
 
       animateLetters(letter, min + (max - min) * intensity);
     });
@@ -57,8 +57,8 @@ const setupTextHover = (container, type) => {
   container.addEventListener("mouseleave", handleMouseLeave);
 
   return () => {
-    container.removeEventListner("mousemove", handleMouseMove);
-    container.removeEventListner("mouseleave", handleMouseLeave);
+    container.removeEventListener("mousemove", handleMouseMove);
+    container.removeEventListener("mouseleave", handleMouseLeave);
   };
 };
 
@@ -71,8 +71,8 @@ const Welcome = () => {
     const subtitleCleanup = setupTextHover(subtitleRef.current, "subtitle");
 
     return () => {
-      subtitleCleanup();
-      titleCleanup();
+      if (subtitleCleanup) subtitleCleanup();
+      if (titleCleanup) titleCleanup();
     };
   });
 
