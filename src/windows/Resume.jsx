@@ -10,16 +10,6 @@ pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.vers
 
 const Resume = () => {
   const [numPages, setNumPages] = React.useState(null);
-  const [error, setError] = React.useState(null);
-
-  const onDocumentLoadSuccess = ({ numPages }) => {
-    setNumPages(numPages);
-  };
-
-  const onDocumentLoadError = (error) => {
-    setError(error);
-    console.error("PDF load error:", error);
-  };
 
   return (
     <>
@@ -35,20 +25,13 @@ const Resume = () => {
           <Download className="icon" />
         </a>
       </div>
-      <div style={{ overflow: "auto", height: "100%" }}>
-        {error ? (
-          <div style={{ padding: "20px", color: "red" }}>
-            Error loading PDF: {error.message}
-          </div>
-        ) : (
-          <Document
-            file="/files/resume.pdf"
-            onLoadSuccess={onDocumentLoadSuccess}
-            onLoadError={onDocumentLoadError}
-          >
-            <Page pageNumber={1} width={800} />
-          </Document>
-        )}
+      <div style={{ width: "800px", height: "600px", overflow: "auto", backgroundColor: "white", padding: "20px" }}>
+        <Document
+          file="/files/resume.pdf"
+          onLoadSuccess={({ numPages }) => setNumPages(numPages)}
+        >
+          <Page pageNumber={1} />
+        </Document>
       </div>
     </>
   );

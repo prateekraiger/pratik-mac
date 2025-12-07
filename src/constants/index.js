@@ -545,6 +545,18 @@ const WINDOW_CONFIG = {
     data: null,
     isMaximized: false,
   },
+  urlfile: {
+    isOpen: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+    isMaximized: false,
+  },
+  figfile: {
+    isOpen: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+    isMaximized: false,
+  },
 };
 
 export { INITIAL_Z_INDEX, WINDOW_CONFIG };

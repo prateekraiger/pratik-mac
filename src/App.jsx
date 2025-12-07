@@ -5,10 +5,13 @@ import React from "react";
 
 import gsap from "gsap";
 import { Draggable } from "gsap/Draggable";
-import TerminalWindow from "#windows/Terminal";
-import Safari from "#windows/Safari";
-import Resume from "#windows/Resume";
-import Finder from "#windows/Finder";
+import {
+  TerminalWindow,
+  SafariWindow,
+  ResumeWindow,
+  FinderWindow,
+  TextWindow,
+} from "#windows";
 
 gsap.registerPlugin(Draggable);
 
@@ -20,9 +23,10 @@ const App = () => {
       <Dock />
 
       <TerminalWindow />
-      <Safari />
-      <Resume />
-      <Finder />
+      <SafariWindow />
+      <ResumeWindow />
+      <FinderWindow />
+      <TextWindow />
     </main>
   );
 };
