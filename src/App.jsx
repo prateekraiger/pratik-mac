@@ -7,6 +7,7 @@ import gsap from "gsap";
 import { Draggable } from "gsap/Draggable";
 import TerminalWindow from "#windows/Terminal";
 import Safari from "#windows/Safari";
+import Resume from "#windows/Resume";
 
 gsap.registerPlugin(Draggable);
 
@@ -19,6 +20,7 @@ const App = () => {
 
       <TerminalWindow />
       <Safari />
+      <Resume />
     </main>
   );
 };
