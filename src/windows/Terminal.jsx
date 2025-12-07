@@ -1,3 +1,4 @@
+import WindowsControls from "#components/WindowsControls";
 import { techStack } from "#constants";
 import WindowWrapper from "#hoc/WindowWrapper";
 import { Flag } from "lucide-react";
@@ -8,7 +9,7 @@ const Terminal = () => {
   return (
     <>
       <div id="window-header">
-        <p>Window Controls</p>
+        <WindowsControls target="terminal" />
         <h2>Tech Stack</h2>
       </div>
 
@@ -56,4 +57,4 @@ const Terminal = () => {
 
 const TerminalWindow = WindowWrapper(Terminal, "terminal");
 
-export default Terminal;
+export default TerminalWindow;
