@@ -6,10 +6,7 @@ import { Document, Page, pdfjs } from "react-pdf";
 import "react-pdf/dist/Page/AnnotationLayer.css";
 import "react-pdf/dist/Page/TextLayer.css";
 
-pdfjs.GlobalWorkerOptions.workerSrc = new URL(
-  "pdfjs-dist/build/pdf.worker.min.mjs",
-  import.meta.url
-).toString();
+pdfjs.GlobalWorkerOptions.workerSrc = `https://unpkg.com/pdfjs-dist@${pdfjs.version}/build/pdf.worker.min.mjs`;
 
 const Resume = () => {
   const [numPages, setNumPages] = React.useState(null);
@@ -38,19 +35,21 @@ const Resume = () => {
           <Download className="icon" />
         </a>
       </div>
-      {error ? (
-        <div style={{ padding: "20px", color: "red" }}>
-          Error loading PDF: {error.message}
-        </div>
-      ) : (
-        <Document
-          file="/files/resume.pdf"
-          onLoadSuccess={onDocumentLoadSuccess}
-          onLoadError={onDocumentLoadError}
-        >
-          <Page pageNumber={1} renderTextLayer renderAnnotationLayer />
-        </Document>
-      )}
+      <div style={{ overflow: "auto", height: "100%" }}>
+        {error ? (
+          <div style={{ padding: "20px", color: "red" }}>
+            Error loading PDF: {error.message}
+          </div>
+        ) : (
+          <Document
+            file="/files/resume.pdf"
+            onLoadSuccess={onDocumentLoadSuccess}
+            onLoadError={onDocumentLoadError}
+          >
+            <Page pageNumber={1} width={800} />
+          </Document>
+        )}
+      </div>
     </>
   );
 };
