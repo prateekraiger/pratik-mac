@@ -11,6 +11,7 @@ import {
   ResumeWindow,
   FinderWindow,
   TextWindow,
+  ContactWindow,
 } from "#windows";
 
 gsap.registerPlugin(Draggable);
@@ -27,6 +28,7 @@ const App = () => {
       <ResumeWindow />
       <FinderWindow />
       <TextWindow />
+      <ContactWindow />
     </main>
   );
 };
