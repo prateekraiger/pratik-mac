@@ -106,23 +106,27 @@ const techStack = [
   },
   {
     category: "Mobile",
-    items: ["React Native", "Expo"],
+    items: ["Flutter", "Expo"],
   },
   {
     category: "Styling",
-    items: ["Tailwind CSS", "Sass", "CSS"],
+    items: ["Tailwind CSS", "CSS"],
   },
   {
     category: "Backend",
-    items: ["Node.js", "Express", "NestJS", "Hono"],
+    items: ["Node.js", "Express"],
   },
   {
     category: "Database",
-    items: ["MongoDB", "PostgreSQL"],
+    items: ["MongoDB", "PostgreSQL", "Convex"],
   },
   {
     category: "Dev Tools",
     items: ["Git", "GitHub", "Docker"],
+  },
+  {
+    category: "Design",
+    items: ["Figma", "Canva"],
   },
 ];
 
@@ -493,14 +497,54 @@ export const locations = {
 const INITIAL_Z_INDEX = 1000;
 
 const WINDOW_CONFIG = {
-  finder: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  contact: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  resume: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  safari: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  photos: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  terminal: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  txtfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
-  imgfile: { isOpen: false, zIndex: INITIAL_Z_INDEX, data: null },
+  finder: {
+    isOpen: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+    isMaximized: false,
+  },
+  contact: {
+    isOpen: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+    isMaximized: false,
+  },
+  resume: {
+    isOpen: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+    isMaximized: false,
+  },
+  safari: {
+    isOpen: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+    isMaximized: false,
+  },
+  photos: {
+    isOpen: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+    isMaximized: false,
+  },
+  terminal: {
+    isOpen: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+    isMaximized: false,
+  },
+  txtfile: {
+    isOpen: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+    isMaximized: false,
+  },
+  imgfile: {
+    isOpen: false,
+    zIndex: INITIAL_Z_INDEX,
+    data: null,
+    isMaximized: false,
+  },
 };
 
 export { INITIAL_Z_INDEX, WINDOW_CONFIG };
