@@ -31,7 +31,8 @@ const Finder = () => {
     if (item.fileType === "fig" && item.href)
       return window.open(item.href, "_blank");
     if (item.fileType === "txt") return openWindow("txtfile", item);
-    if (item.fileType === "img") return openWindow("imgfile", { image: item.imageUrl || item.icon });
+    if (item.fileType === "img")
+      return openWindow("imgfile", { image: item.imageUrl || item.icon });
   };
 
   return (
