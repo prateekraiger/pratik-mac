@@ -12,6 +12,8 @@ import {
   FinderWindow,
   TextWindow,
   ContactWindow,
+  PhotosWindow,
+  ImageWindow,
 } from "#windows";
 import Home from "#components/Home";
 
@@ -31,6 +33,8 @@ const App = () => {
       <FinderWindow />
       <TextWindow />
       <ContactWindow />
+      <PhotosWindow />
+      <ImageWindow />
     </main>
   );
 };
