@@ -13,6 +13,7 @@ import {
   TextWindow,
   ContactWindow,
 } from "#windows";
+import Home from "#components/Home";
 
 gsap.registerPlugin(Draggable);
 
@@ -22,6 +23,7 @@ const App = () => {
       <Navbar />
       <Welcome />
       <Dock />
+      <Home />
 
       <TerminalWindow />
       <SafariWindow />

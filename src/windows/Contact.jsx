@@ -27,7 +27,7 @@ const Contact = () => {
               <a
                 href={link}
                 target="_blank"
-                ref="noopener noreferrer"
+                rel="noopener noreferrer"
                 title={text}
               >
                 <img src={icon} alt={text} className="size-5" />
@@ -41,5 +41,5 @@ const Contact = () => {
   );
 };
 
-const WindowWrapper = WindowWrapper("Contact", "contact");
-export default Contact;
+const ContactWindow = WindowWrapper(Contact, "contact");
+export default ContactWindow;
