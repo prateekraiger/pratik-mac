@@ -35,7 +35,7 @@ const Photos = () => {
         </div>
 
         {/* Gallery Grid */}
-        <div className="gallery">
+        <div className="gallery flex-1 overflow-y-auto">
           <ul>
             {gallery.map(({ id, img }) => (
               <li key={id} onClick={() => handleImageClick(img)}>
